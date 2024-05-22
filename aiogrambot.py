@@ -15,11 +15,7 @@ from api_functions import coin_price, coin_name
 load_dotenv()
 
 TG_TOKEN = os.getenv('TOKEN')
-COIN_BUTTONS = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text=i)] for i in coin_name()],
-    resize_keyboard=True,
-    one_time_keyboard=True
-)
+COIN_BUTTONS = 
 REACH_EDGE_PHRASE = ("Цена за монету {} достигла {} значения {}. Текущее: {}")
 
 
@@ -51,7 +47,11 @@ async def cmd_start(message: Message, state: FSMContext) -> None:
     await message.answer(
         f'Здравствуйте, {message.from_user.first_name}. '
         f'Выберите интересующую вас монету.',
-        reply_markup=COIN_BUTTONS
+        reply_markup=ReplyKeyboardMarkup(
+            keyboard=[[KeyboardButton(text=i)] for i in coin_name()],
+            resize_keyboard=True,
+            one_time_keyboard=True
+        )
     )
 
 
