@@ -15,7 +15,6 @@ from api_functions import coin_price, coin_name
 load_dotenv()
 
 TG_TOKEN = os.getenv('TOKEN')
-COIN_BUTTONS = 
 REACH_EDGE_PHRASE = ("Цена за монету {} достигла {} значения {}. Текущее: {}")
 
 
